@@ -1,0 +1,51 @@
+name: CI - Swagger + Node App
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - "swagger.yaml"
+      - "**/*.js"
+      - "package.json"
+      - "package-lock.json"
+
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repo
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install Dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Validate OpenAPI (swagger.yaml)
+      - name: Validate OpenAPI Spec
+        uses: char0n/swagger-editor-validate@v3
+        with:
+          file: swagger.yaml
+
+      # Run basic test: ensure server can start
+      - name: Run Server Smoke Test
+        run: |
+          node index.js &
+          sleep 3
+          curl -f http://localhost:3000/hello
+
+      # (Optional) Save artifact for logs or distribution
+      - name: Archive Swagger Spec
+        uses: actions/upload-artifact@v4
+        with:
+          name: swagger-spec
+          path: swagger.yaml
