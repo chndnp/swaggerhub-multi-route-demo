@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Multi-Route Swagger API - mic check 321
+  title: Multi-Route Swagger API - mic check 123
   version: 1.0.0
 servers:
 - url: https://virtserver.swaggerhub.com/shoonya-13b/MultiRouteDemo/1.0.0
