@@ -2,36 +2,43 @@ openapi: 3.0.0
 info:
   title: Multi-Route Swagger API
   version: 1.0.0
-
+servers:
+- url: https://virtserver.swaggerhub.com/shoonya-13b/MultiRouteDemo/1.0.0
+  description: SwaggerHub API Auto Mocking
 paths:
   /hello:
     get:
       summary: Returns greeting
       responses:
-        '200':
+        "200":
           description: Greeting response
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-
+                $ref: "#/components/schemas/inline_response_200"
   /users:
     get:
       summary: Get all users
       responses:
-        '200':
+        "200":
           description: List of users
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
+                  $ref: "#/components/schemas/inline_response_200_1"
+components:
+  schemas:
+    inline_response_200:
+      type: object
+      properties:
+        message:
+          type: string
+    inline_response_200_1:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
