@@ -31,10 +31,11 @@ jobs:
         run: npm install
 
       # Validate OpenAPI (swagger.yaml)
+      - name: Install IBM OpenAPI Validator
+        run: npm install --save-dev ibm-openapi-validator
+      
       - name: Validate OpenAPI Spec
-        uses: char0n/swagger-editor-validate@v3
-        with:
-          file: swagger.yaml
+        run: npx lint-openapi swagger.yaml --errors-only
 
       # Run basic test: ensure server can start
       - name: Run Server Smoke Test
