@@ -7,6 +7,7 @@ This project is a **Node.js Express API** with a **multi-route structure**, full
 ## 📁 Project Structure
 
 swaggerhub-multi-route-demo
+```
 │
 ├── .github
 │ ├── workflows
@@ -23,7 +24,7 @@ swaggerhub-multi-route-demo
 ├── index.js
 ├── package.json
 └── README.md
-
+```
 
 ---
 
