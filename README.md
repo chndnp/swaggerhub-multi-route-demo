@@ -63,7 +63,7 @@ The project is connected to SwaggerHub through:
 ## 🤖 GitHub Actions CI
 A CI pipeline runs on every push to the main branch.
 
-What CI does:
+What CI does:  
 ✔ Installs dependencies  
 ✔ Validates swagger.yaml using swagger-cli  
 ✔ Starts the server and performs a smoke test  
