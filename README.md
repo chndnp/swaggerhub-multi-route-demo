@@ -64,10 +64,10 @@ The project is connected to SwaggerHub through:
 A CI pipeline runs on every push to the main branch.
 
 What CI does:
-- ✔ Installs dependencies
-- ✔ Validates swagger.yaml using swagger-cli
-- ✔ Starts the server and performs a smoke test
-- ✔ Uploads the swagger file as an artifact
+✔ Installs dependencies  
+✔ Validates swagger.yaml using swagger-cli  
+✔ Starts the server and performs a smoke test  
+✔ Uploads the swagger file as an artifact  
 
 Workflow file is located at:
 ```
