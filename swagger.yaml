@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Multi-Route Swagger API
+  version: 1.0.0
+
+paths:
+  /hello:
+    get:
+      summary: Returns greeting
+      responses:
+        '200':
+          description: Greeting response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
